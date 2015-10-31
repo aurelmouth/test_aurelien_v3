@@ -1,0 +1,7 @@
+/* here you can put your own css to customize and override the theme */
+
+.modal-open .modal {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  overflow-y: scroll;
+}

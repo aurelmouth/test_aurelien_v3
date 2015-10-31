@@ -1,0 +1,895 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="urn:xtk:workflow" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="urn:xtk:workflow">
+    <types>
+        <s:schema elementFormDefault="qualified" targetNamespace="urn:xtk:workflow">
+            <s:complexType name="Element">
+                <s:sequence>
+                    <s:any processContents="lax" />
+                </s:sequence>
+            </s:complexType>
+            <s:element name="Start">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element maxOccurs="1" minOccurs="1" name="sessiontoken" type="s:string" />
+                        <s:element maxOccurs="1" minOccurs="1" name="strWorkflowId" type="s:string" />
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="StartResponse">
+                <s:complexType>
+                    <s:sequence/>
+                </s:complexType>
+            </s:element>
+            <s:element name="Pause">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element maxOccurs="1" minOccurs="1" name="sessiontoken" type="s:string" />
+                        <s:element maxOccurs="1" minOccurs="1" name="strWorkflowId" type="s:string" />
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="PauseResponse">
+                <s:complexType>
+                    <s:sequence/>
+                </s:complexType>
+            </s:element>
+            <s:element name="Stop">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element maxOccurs="1" minOccurs="1" name="sessiontoken" type="s:string" />
+                        <s:element maxOccurs="1" minOccurs="1" name="strWorkflowId" type="s:string" />
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="StopResponse">
+                <s:complexType>
+                    <s:sequence/>
+                </s:complexType>
+            </s:element>
+            <s:element name="Kill">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element maxOccurs="1" minOccurs="1" name="sessiontoken" type="s:string" />
+                        <s:element maxOccurs="1" minOccurs="1" name="strWorkflowId" type="s:string" />
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="KillResponse">
+                <s:complexType>
+                    <s:sequence/>
+                </s:complexType>
+            </s:element>
+            <s:element name="Restart">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element maxOccurs="1" minOccurs="1" name="sessiontoken" type="s:string" />
+                        <s:element maxOccurs="1" minOccurs="1" name="strWorkflowId" type="s:string" />
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="RestartResponse">
+                <s:complexType>
+                    <s:sequence/>
+                </s:complexType>
+            </s:element>
+            <s:element name="Cleanup">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element maxOccurs="1" minOccurs="1" name="sessiontoken" type="s:string" />
+                        <s:element maxOccurs="1" minOccurs="1" name="strWorkflowId" type="s:string" />
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="CleanupResponse">
+                <s:complexType>
+                    <s:sequence/>
+                </s:complexType>
+            </s:element>
+            <s:element name="Simulate">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element maxOccurs="1" minOccurs="1" name="sessiontoken" type="s:string" />
+                        <s:element maxOccurs="1" minOccurs="1" name="strWorkflowId" type="s:string" />
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="SimulateResponse">
+                <s:complexType>
+                    <s:sequence/>
+                </s:complexType>
+            </s:element>
+            <s:element name="Wakeup">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element maxOccurs="1" minOccurs="1" name="sessiontoken" type="s:string" />
+                        <s:element maxOccurs="1" minOccurs="1" name="strWorkflowId" type="s:string" />
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="WakeupResponse">
+                <s:complexType>
+                    <s:sequence/>
+                </s:complexType>
+            </s:element>
+            <s:element name="WakeupTask">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element maxOccurs="1" minOccurs="1" name="sessiontoken" type="s:string" />
+                        <s:element maxOccurs="1" minOccurs="1" name="strWorkflowId" type="s:string" />
+                        <s:element maxOccurs="1" minOccurs="1" name="strTaskIdentifier" type="s:string" />
+                        <s:element maxOccurs="1" minOccurs="1" name="strActivityName" type="s:string" />
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="WakeupTaskResponse">
+                <s:complexType>
+                    <s:sequence/>
+                </s:complexType>
+            </s:element>
+            <s:element name="RestartTask">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element maxOccurs="1" minOccurs="1" name="sessiontoken" type="s:string" />
+                        <s:element maxOccurs="1" minOccurs="1" name="strWorkflowId" type="s:string" />
+                        <s:element maxOccurs="1" minOccurs="1" name="strActivityName" type="s:string" />
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="RestartTaskResponse">
+                <s:complexType>
+                    <s:sequence/>
+                </s:complexType>
+            </s:element>
+            <s:element name="DeleteResult">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element maxOccurs="1" minOccurs="1" name="sessiontoken" type="s:string" />
+                        <s:element maxOccurs="1" minOccurs="1" name="strWorkflowId" type="s:string" />
+                        <s:element maxOccurs="1" minOccurs="1" name="strActivityName" type="s:string" />
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="DeleteResultResponse">
+                <s:complexType>
+                    <s:sequence/>
+                </s:complexType>
+            </s:element>
+            <s:element name="Execute">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element maxOccurs="1" minOccurs="1" name="sessiontoken" type="s:string" />
+                        <s:element maxOccurs="1" minOccurs="1" name="strWorkflowId" type="s:string" />
+                        <s:element maxOccurs="1" minOccurs="1" name="bSimulationMode" type="s:boolean" />
+                        <s:element maxOccurs="1" minOccurs="1" name="bKeepResult" type="s:boolean" />
+                        <s:element maxOccurs="1" minOccurs="1" name="bLogSQL" type="s:boolean" />
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="ExecuteResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element maxOccurs="1" minOccurs="1" name="pelemWorkflow" type="tns:Element" />
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="ExecuteInstance">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element maxOccurs="1" minOccurs="1" name="sessiontoken" type="s:string" />
+                        <s:element maxOccurs="1" minOccurs="1" name="entity" type="tns:Element" />
+                        <s:element maxOccurs="1" minOccurs="1" name="bSimulationMode" type="s:boolean" />
+                        <s:element maxOccurs="1" minOccurs="1" name="bKeepResult" type="s:boolean" />
+                        <s:element maxOccurs="1" minOccurs="1" name="bLogSQL" type="s:boolean" />
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="ExecuteInstanceResponse" type="tns:Element" />
+            <s:element name="GetValidationParameters">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element maxOccurs="1" minOccurs="1" name="sessiontoken" type="s:string" />
+                        <s:element maxOccurs="1" minOccurs="1" name="strWorkflowId" type="s:string" />
+                        <s:element maxOccurs="1" minOccurs="1" name="strTaskIdentifier" type="s:string" />
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="GetValidationParametersResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element maxOccurs="1" minOccurs="1" name="pdomContent" type="tns:Element" />
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="Reply">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element maxOccurs="1" minOccurs="1" name="sessiontoken" type="s:string" />
+                        <s:element maxOccurs="1" minOccurs="1" name="strWorkflowId" type="s:string" />
+                        <s:element maxOccurs="1" minOccurs="1" name="strTaskIdentifier" type="s:string" />
+                        <s:element maxOccurs="1" minOccurs="1" name="strResponse" type="s:string" />
+                        <s:element maxOccurs="1" minOccurs="1" name="strChoice" type="s:string" />
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="ReplyResponse">
+                <s:complexType>
+                    <s:sequence/>
+                </s:complexType>
+            </s:element>
+            <s:element name="StartWithParameters">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element maxOccurs="1" minOccurs="1" name="sessiontoken" type="s:string" />
+                        <s:element maxOccurs="1" minOccurs="1" name="strWorkflowId" type="s:string" />
+                        <s:element maxOccurs="1" minOccurs="1" name="elemParameters" type="tns:Element" />
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="StartWithParametersResponse">
+                <s:complexType>
+                    <s:sequence/>
+                </s:complexType>
+            </s:element>
+            <s:element name="SimulateWithParameters">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element maxOccurs="1" minOccurs="1" name="sessiontoken" type="s:string" />
+                        <s:element maxOccurs="1" minOccurs="1" name="strWorkflowId" type="s:string" />
+                        <s:element maxOccurs="1" minOccurs="1" name="elemParameters" type="tns:Element" />
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="SimulateWithParametersResponse">
+                <s:complexType>
+                    <s:sequence/>
+                </s:complexType>
+            </s:element>
+            <s:element name="SpawnWithParameters">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element maxOccurs="1" minOccurs="1" name="sessiontoken" type="s:string" />
+                        <s:element maxOccurs="1" minOccurs="1" name="strWorkflowId" type="s:string" />
+                        <s:element maxOccurs="1" minOccurs="1" name="elemParameters" type="tns:Element" />
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="SpawnWithParametersResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element maxOccurs="1" minOccurs="1" name="plInstanceId" type="s:int" />
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="SpawnWithParametersEx">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element maxOccurs="1" minOccurs="1" name="sessiontoken" type="s:string" />
+                        <s:element maxOccurs="1" minOccurs="1" name="strWorkflowId" type="s:string" />
+                        <s:element maxOccurs="1" minOccurs="1" name="bSimulation" type="s:boolean" />
+                        <s:element maxOccurs="1" minOccurs="1" name="elemParameters" type="tns:Element" />
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="SpawnWithParametersExResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element maxOccurs="1" minOccurs="1" name="plInstanceId" type="s:int" />
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="Spawn">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element maxOccurs="1" minOccurs="1" name="sessiontoken" type="s:string" />
+                        <s:element maxOccurs="1" minOccurs="1" name="strWorkflowId" type="s:string" />
+                        <s:element maxOccurs="1" minOccurs="1" name="elemPatch" type="tns:Element" />
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="SpawnResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element maxOccurs="1" minOccurs="1" name="plInstanceId" type="s:int" />
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="PostEvent">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element maxOccurs="1" minOccurs="1" name="sessiontoken" type="s:string" />
+                        <s:element maxOccurs="1" minOccurs="1" name="strWorkflowId" type="s:string" />
+                        <s:element maxOccurs="1" minOccurs="1" name="strActivity" type="s:string" />
+                        <s:element maxOccurs="1" minOccurs="1" name="strTransition" type="s:string" />
+                        <s:element maxOccurs="1" minOccurs="1" name="elemParameters" type="tns:Element" />
+                        <s:element maxOccurs="1" minOccurs="1" name="bComplete" type="s:boolean" />
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="PostEventResponse">
+                <s:complexType>
+                    <s:sequence/>
+                </s:complexType>
+            </s:element>
+            <s:element name="GetLogin">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element maxOccurs="1" minOccurs="1" name="sessiontoken" type="s:string" />
+                        <s:element maxOccurs="1" minOccurs="1" name="strWorkflowId" type="s:string" />
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="GetLoginResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element maxOccurs="1" minOccurs="1" name="plId" type="s:int" />
+                        <s:element maxOccurs="1" minOccurs="1" name="pstrLogin" type="s:string" />
+                        <s:element maxOccurs="1" minOccurs="1" name="pstrCs" type="s:string" />
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="SetLogin">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element maxOccurs="1" minOccurs="1" name="sessiontoken" type="s:string" />
+                        <s:element maxOccurs="1" minOccurs="1" name="strWorkflowId" type="s:string" />
+                        <s:element maxOccurs="1" minOccurs="1" name="strLogin" type="s:string" />
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="SetLoginResponse">
+                <s:complexType>
+                    <s:sequence/>
+                </s:complexType>
+            </s:element>
+            <s:element name="readSurveySchema">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element maxOccurs="1" minOccurs="1" name="sessiontoken" type="s:string" />
+                        <s:element maxOccurs="1" minOccurs="1" name="activity" type="tns:Element" />
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="readSurveySchemaResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element maxOccurs="1" minOccurs="1" name="enrichedActivity" type="tns:Element" />
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="describeWSDL">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element maxOccurs="1" minOccurs="1" name="sessiontoken" type="s:string" />
+                        <s:element maxOccurs="1" minOccurs="1" name="wdslURL" type="s:string" />
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="describeWSDLResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element maxOccurs="1" minOccurs="1" name="simplifiedDescription" type="tns:Element" />
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="generateSOAPCode">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element maxOccurs="1" minOccurs="1" name="sessiontoken" type="s:string" />
+                        <s:element maxOccurs="1" minOccurs="1" name="apiCallDescription" type="tns:Element" />
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="generateSOAPCodeResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element maxOccurs="1" minOccurs="1" name="apiCalls" type="tns:Element" />
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+        </s:schema>
+    </types>
+    <message name="StartIn">
+        <part element="tns:Start" name="parameters" />
+    </message>
+    <message name="StartOut">
+        <part element="tns:StartResponse" name="parameters" />
+    </message>
+    <message name="PauseIn">
+        <part element="tns:Pause" name="parameters" />
+    </message>
+    <message name="PauseOut">
+        <part element="tns:PauseResponse" name="parameters" />
+    </message>
+    <message name="StopIn">
+        <part element="tns:Stop" name="parameters" />
+    </message>
+    <message name="StopOut">
+        <part element="tns:StopResponse" name="parameters" />
+    </message>
+    <message name="KillIn">
+        <part element="tns:Kill" name="parameters" />
+    </message>
+    <message name="KillOut">
+        <part element="tns:KillResponse" name="parameters" />
+    </message>
+    <message name="RestartIn">
+        <part element="tns:Restart" name="parameters" />
+    </message>
+    <message name="RestartOut">
+        <part element="tns:RestartResponse" name="parameters" />
+    </message>
+    <message name="CleanupIn">
+        <part element="tns:Cleanup" name="parameters" />
+    </message>
+    <message name="CleanupOut">
+        <part element="tns:CleanupResponse" name="parameters" />
+    </message>
+    <message name="SimulateIn">
+        <part element="tns:Simulate" name="parameters" />
+    </message>
+    <message name="SimulateOut">
+        <part element="tns:SimulateResponse" name="parameters" />
+    </message>
+    <message name="WakeupIn">
+        <part element="tns:Wakeup" name="parameters" />
+    </message>
+    <message name="WakeupOut">
+        <part element="tns:WakeupResponse" name="parameters" />
+    </message>
+    <message name="WakeupTaskIn">
+        <part element="tns:WakeupTask" name="parameters" />
+    </message>
+    <message name="WakeupTaskOut">
+        <part element="tns:WakeupTaskResponse" name="parameters" />
+    </message>
+    <message name="RestartTaskIn">
+        <part element="tns:RestartTask" name="parameters" />
+    </message>
+    <message name="RestartTaskOut">
+        <part element="tns:RestartTaskResponse" name="parameters" />
+    </message>
+    <message name="DeleteResultIn">
+        <part element="tns:DeleteResult" name="parameters" />
+    </message>
+    <message name="DeleteResultOut">
+        <part element="tns:DeleteResultResponse" name="parameters" />
+    </message>
+    <message name="ExecuteIn">
+        <part element="tns:Execute" name="parameters" />
+    </message>
+    <message name="ExecuteOut">
+        <part element="tns:ExecuteResponse" name="parameters" />
+    </message>
+    <message name="ExecuteInstanceIn">
+        <part element="tns:ExecuteInstance" name="parameters" />
+    </message>
+    <message name="ExecuteInstanceOut">
+        <part element="tns:ExecuteInstanceResponse" name="parameters" />
+    </message>
+    <message name="GetValidationParametersIn">
+        <part element="tns:GetValidationParameters" name="parameters" />
+    </message>
+    <message name="GetValidationParametersOut">
+        <part element="tns:GetValidationParametersResponse" name="parameters" />
+    </message>
+    <message name="ReplyIn">
+        <part element="tns:Reply" name="parameters" />
+    </message>
+    <message name="ReplyOut">
+        <part element="tns:ReplyResponse" name="parameters" />
+    </message>
+    <message name="StartWithParametersIn">
+        <part element="tns:StartWithParameters" name="parameters" />
+    </message>
+    <message name="StartWithParametersOut">
+        <part element="tns:StartWithParametersResponse" name="parameters" />
+    </message>
+    <message name="SimulateWithParametersIn">
+        <part element="tns:SimulateWithParameters" name="parameters" />
+    </message>
+    <message name="SimulateWithParametersOut">
+        <part element="tns:SimulateWithParametersResponse" name="parameters" />
+    </message>
+    <message name="SpawnWithParametersIn">
+        <part element="tns:SpawnWithParameters" name="parameters" />
+    </message>
+    <message name="SpawnWithParametersOut">
+        <part element="tns:SpawnWithParametersResponse" name="parameters" />
+    </message>
+    <message name="SpawnWithParametersExIn">
+        <part element="tns:SpawnWithParametersEx" name="parameters" />
+    </message>
+    <message name="SpawnWithParametersExOut">
+        <part element="tns:SpawnWithParametersExResponse" name="parameters" />
+    </message>
+    <message name="SpawnIn">
+        <part element="tns:Spawn" name="parameters" />
+    </message>
+    <message name="SpawnOut">
+        <part element="tns:SpawnResponse" name="parameters" />
+    </message>
+    <message name="PostEventIn">
+        <part element="tns:PostEvent" name="parameters" />
+    </message>
+    <message name="PostEventOut">
+        <part element="tns:PostEventResponse" name="parameters" />
+    </message>
+    <message name="GetLoginIn">
+        <part element="tns:GetLogin" name="parameters" />
+    </message>
+    <message name="GetLoginOut">
+        <part element="tns:GetLoginResponse" name="parameters" />
+    </message>
+    <message name="SetLoginIn">
+        <part element="tns:SetLogin" name="parameters" />
+    </message>
+    <message name="SetLoginOut">
+        <part element="tns:SetLoginResponse" name="parameters" />
+    </message>
+    <message name="readSurveySchemaIn">
+        <part element="tns:readSurveySchema" name="parameters" />
+    </message>
+    <message name="readSurveySchemaOut">
+        <part element="tns:readSurveySchemaResponse" name="parameters" />
+    </message>
+    <message name="describeWSDLIn">
+        <part element="tns:describeWSDL" name="parameters" />
+    </message>
+    <message name="describeWSDLOut">
+        <part element="tns:describeWSDLResponse" name="parameters" />
+    </message>
+    <message name="generateSOAPCodeIn">
+        <part element="tns:generateSOAPCode" name="parameters" />
+    </message>
+    <message name="generateSOAPCodeOut">
+        <part element="tns:generateSOAPCodeResponse" name="parameters" />
+    </message>
+    <portType name="workflowMethodsSoap">
+        <operation name="Start">
+            <input message="tns:StartIn" />
+            <output message="tns:StartOut" />
+        </operation>
+        <operation name="Pause">
+            <input message="tns:PauseIn" />
+            <output message="tns:PauseOut" />
+        </operation>
+        <operation name="Stop">
+            <input message="tns:StopIn" />
+            <output message="tns:StopOut" />
+        </operation>
+        <operation name="Kill">
+            <input message="tns:KillIn" />
+            <output message="tns:KillOut" />
+        </operation>
+        <operation name="Restart">
+            <input message="tns:RestartIn" />
+            <output message="tns:RestartOut" />
+        </operation>
+        <operation name="Cleanup">
+            <input message="tns:CleanupIn" />
+            <output message="tns:CleanupOut" />
+        </operation>
+        <operation name="Simulate">
+            <input message="tns:SimulateIn" />
+            <output message="tns:SimulateOut" />
+        </operation>
+        <operation name="Wakeup">
+            <input message="tns:WakeupIn" />
+            <output message="tns:WakeupOut" />
+        </operation>
+        <operation name="WakeupTask">
+            <input message="tns:WakeupTaskIn" />
+            <output message="tns:WakeupTaskOut" />
+        </operation>
+        <operation name="RestartTask">
+            <input message="tns:RestartTaskIn" />
+            <output message="tns:RestartTaskOut" />
+        </operation>
+        <operation name="DeleteResult">
+            <input message="tns:DeleteResultIn" />
+            <output message="tns:DeleteResultOut" />
+        </operation>
+        <operation name="Execute">
+            <input message="tns:ExecuteIn" />
+            <output message="tns:ExecuteOut" />
+        </operation>
+        <operation name="ExecuteInstance">
+            <input message="tns:ExecuteInstanceIn" />
+            <output message="tns:ExecuteInstanceOut" />
+        </operation>
+        <operation name="GetValidationParameters">
+            <input message="tns:GetValidationParametersIn" />
+            <output message="tns:GetValidationParametersOut" />
+        </operation>
+        <operation name="Reply">
+            <input message="tns:ReplyIn" />
+            <output message="tns:ReplyOut" />
+        </operation>
+        <operation name="StartWithParameters">
+            <input message="tns:StartWithParametersIn" />
+            <output message="tns:StartWithParametersOut" />
+        </operation>
+        <operation name="SimulateWithParameters">
+            <input message="tns:SimulateWithParametersIn" />
+            <output message="tns:SimulateWithParametersOut" />
+        </operation>
+        <operation name="SpawnWithParameters">
+            <input message="tns:SpawnWithParametersIn" />
+            <output message="tns:SpawnWithParametersOut" />
+        </operation>
+        <operation name="SpawnWithParametersEx">
+            <input message="tns:SpawnWithParametersExIn" />
+            <output message="tns:SpawnWithParametersExOut" />
+        </operation>
+        <operation name="Spawn">
+            <input message="tns:SpawnIn" />
+            <output message="tns:SpawnOut" />
+        </operation>
+        <operation name="PostEvent">
+            <input message="tns:PostEventIn" />
+            <output message="tns:PostEventOut" />
+        </operation>
+        <operation name="GetLogin">
+            <input message="tns:GetLoginIn" />
+            <output message="tns:GetLoginOut" />
+        </operation>
+        <operation name="SetLogin">
+            <input message="tns:SetLoginIn" />
+            <output message="tns:SetLoginOut" />
+        </operation>
+        <operation name="readSurveySchema">
+            <input message="tns:readSurveySchemaIn" />
+            <output message="tns:readSurveySchemaOut" />
+        </operation>
+        <operation name="describeWSDL">
+            <input message="tns:describeWSDLIn" />
+            <output message="tns:describeWSDLOut" />
+        </operation>
+        <operation name="generateSOAPCode">
+            <input message="tns:generateSOAPCodeIn" />
+            <output message="tns:generateSOAPCodeOut" />
+        </operation>
+    </portType>
+    <binding name="workflowMethodsSoap" type="tns:workflowMethodsSoap">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+        <operation name="Start">
+            <soap:operation soapAction="xtk:workflow#Start" style="document" />
+            <input>
+            <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal" />
+            </input>
+            <output>
+                <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal" />
+            </output>
+        </operation>
+        <operation name="Pause">
+            <soap:operation soapAction="xtk:workflow#Pause" style="document" />
+            <input>
+            <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal" />
+            </input>
+            <output>
+                <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal" />
+            </output>
+        </operation>
+        <operation name="Stop">
+            <soap:operation soapAction="xtk:workflow#Stop" style="document" />
+            <input>
+            <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal" />
+            </input>
+            <output>
+                <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal" />
+            </output>
+        </operation>
+        <operation name="Kill">
+            <soap:operation soapAction="xtk:workflow#Kill" style="document" />
+            <input>
+            <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal" />
+            </input>
+            <output>
+                <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal" />
+            </output>
+        </operation>
+        <operation name="Restart">
+            <soap:operation soapAction="xtk:workflow#Restart" style="document" />
+            <input>
+            <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal" />
+            </input>
+            <output>
+                <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal" />
+            </output>
+        </operation>
+        <operation name="Cleanup">
+            <soap:operation soapAction="xtk:workflow#Cleanup" style="document" />
+            <input>
+            <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal" />
+            </input>
+            <output>
+                <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal" />
+            </output>
+        </operation>
+        <operation name="Simulate">
+            <soap:operation soapAction="xtk:workflow#Simulate" style="document" />
+            <input>
+            <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal" />
+            </input>
+            <output>
+                <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal" />
+            </output>
+        </operation>
+        <operation name="Wakeup">
+            <soap:operation soapAction="xtk:workflow#Wakeup" style="document" />
+            <input>
+            <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal" />
+            </input>
+            <output>
+                <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal" />
+            </output>
+        </operation>
+        <operation name="WakeupTask">
+            <soap:operation soapAction="xtk:workflow#WakeupTask" style="document" />
+            <input>
+            <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal" />
+            </input>
+            <output>
+                <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal" />
+            </output>
+        </operation>
+        <operation name="RestartTask">
+            <soap:operation soapAction="xtk:workflow#RestartTask" style="document" />
+            <input>
+            <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal" />
+            </input>
+            <output>
+                <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal" />
+            </output>
+        </operation>
+        <operation name="DeleteResult">
+            <soap:operation soapAction="xtk:workflow#DeleteResult" style="document" />
+            <input>
+            <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal" />
+            </input>
+            <output>
+                <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal" />
+            </output>
+        </operation>
+        <operation name="Execute">
+            <soap:operation soapAction="xtk:workflow#Execute" style="document" />
+            <input>
+            <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal" />
+            </input>
+            <output>
+                <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal" />
+            </output>
+        </operation>
+        <operation name="ExecuteInstance">
+            <soap:operation soapAction="xtk:workflow#ExecuteInstance" style="document" />
+            <input>
+            <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal" />
+            </input>
+            <output>
+                <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal" />
+            </output>
+        </operation>
+        <operation name="GetValidationParameters">
+            <soap:operation soapAction="xtk:workflow#GetValidationParameters" style="document" />
+            <input>
+            <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal" />
+            </input>
+            <output>
+                <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal" />
+            </output>
+        </operation>
+        <operation name="Reply">
+            <soap:operation soapAction="xtk:workflow#Reply" style="document" />
+            <input>
+            <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal" />
+            </input>
+            <output>
+                <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal" />
+            </output>
+        </operation>
+        <operation name="StartWithParameters">
+            <soap:operation soapAction="xtk:workflow#StartWithParameters" style="document" />
+            <input>
+            <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal" />
+            </input>
+            <output>
+                <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal" />
+            </output>
+        </operation>
+        <operation name="SimulateWithParameters">
+            <soap:operation soapAction="xtk:workflow#SimulateWithParameters" style="document" />
+            <input>
+            <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal" />
+            </input>
+            <output>
+                <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal" />
+            </output>
+        </operation>
+        <operation name="SpawnWithParameters">
+            <soap:operation soapAction="xtk:workflow#SpawnWithParameters" style="document" />
+            <input>
+            <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal" />
+            </input>
+            <output>
+                <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal" />
+            </output>
+        </operation>
+        <operation name="SpawnWithParametersEx">
+            <soap:operation soapAction="xtk:workflow#SpawnWithParametersEx" style="document" />
+            <input>
+            <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal" />
+            </input>
+            <output>
+                <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal" />
+            </output>
+        </operation>
+        <operation name="Spawn">
+            <soap:operation soapAction="xtk:workflow#Spawn" style="document" />
+            <input>
+            <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal" />
+            </input>
+            <output>
+                <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal" />
+            </output>
+        </operation>
+        <operation name="PostEvent">
+            <soap:operation soapAction="xtk:workflow#PostEvent" style="document" />
+            <input>
+            <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal" />
+            </input>
+            <output>
+                <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal" />
+            </output>
+        </operation>
+        <operation name="GetLogin">
+            <soap:operation soapAction="xtk:workflow#GetLogin" style="document" />
+            <input>
+            <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal" />
+            </input>
+            <output>
+                <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal" />
+            </output>
+        </operation>
+        <operation name="SetLogin">
+            <soap:operation soapAction="xtk:workflow#SetLogin" style="document" />
+            <input>
+            <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal" />
+            </input>
+            <output>
+                <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal" />
+            </output>
+        </operation>
+        <operation name="readSurveySchema">
+            <soap:operation soapAction="xtk:workflow#readSurveySchema" style="document" />
+            <input>
+            <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal" />
+            </input>
+            <output>
+                <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal" />
+            </output>
+        </operation>
+        <operation name="describeWSDL">
+            <soap:operation soapAction="xtk:workflow#describeWSDL" style="document" />
+            <input>
+            <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal" />
+            </input>
+            <output>
+                <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal" />
+            </output>
+        </operation>
+        <operation name="generateSOAPCode">
+            <soap:operation soapAction="xtk:workflow#generateSOAPCode" style="document" />
+            <input>
+            <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal" />
+            </input>
+            <output>
+                <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal" />
+            </output>
+        </operation>
+    </binding>
+    <service name="XtkWorkflow">
+        <port binding="tns:workflowMethodsSoap" name="workflowMethodsSoap">
+            <soap:address location="https://prefon-dev.neolane.net/nl/jsp/soaprouter.jsp" />
+        </port>
+    </service>
+</definitions>

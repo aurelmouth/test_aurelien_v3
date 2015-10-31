@@ -1,0 +1,251 @@
+﻿/* 
+    Document   : dqe_demo.css
+    Created on : 14 janv. 2014, 14:11:27
+    Author     : Christophe
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+   display: block;
+}
+
+/* css de l'entête */
+#demo-header {
+   display: block;
+   background: none repeat scroll 0 0 #E27901;
+   margin-top: 2px;
+   margin-left: 10px;
+   width: 435px;
+   height: 80px;  
+   -webkit-box-shadow: 0 0 5px #666666;
+	box-shadow: 0 0 5px #666666;
+}
+
+/* css du contenu principal */
+#demo-container {
+   display: inline-block;
+   margin-top: 10px;
+   margin-left:10px;
+   padding: 5px;
+   vertical-align:top; 
+   width: 425px;
+   height: 320px;  
+   -webkit-box-shadow: 0 0 5px #666666;
+	box-shadow: 0 0 5px #6666666; 
+}
+
+#demo-comment { 
+   margin: 5px; 
+   margin-left: 15px; 
+   text-align: justify; 
+   color: white;
+   display:block;
+   font-size: small;
+}
+
+/* css du menu */
+#demo-menu {
+   display: inline-block;
+   margin-top: 10px;
+   margin-left: 10px;
+   width: 170px;
+   height: 200px;  
+}
+
+#demo-menu1 {
+   display: block;
+   width: 170px;
+   height: 90px;  
+   -webkit-box-shadow: 0 0 5px #6666666;
+	box-shadow: 0 0 5px #666666;
+}
+
+#demo-menu2 {
+   display: block;
+   width: 170px;
+   height: 60px; 
+   margin-top: 10px;
+   -webkit-box-shadow: 0 0 5px #6666666;
+	box-shadow: 0 0 5px #666666;
+}
+
+.button-propal {
+   font-style: normal; 
+   font-size: small;
+}
+
+.button-menu {
+   margin: 3px;
+   width: 160px;
+   height: 22px;
+   font-style: normal; 
+   font-size: small;
+}
+
+.button-form {
+   margin-left: 156px;
+   margin-top: 20px;
+   width: 100px;
+   height: 25px;
+   font-style: normal; 
+   font-size: small;
+}
+
+.button-form1 {
+   margin-left: 266px;
+   margin-top: 10px;
+   width: 100px;
+   height: 25px;
+   font-style: normal; 
+   font-size: small;
+}
+
+.button-form2 {
+   margin-left: 140px;
+   margin-top: 5px;
+   width: 100px;
+   height: 25px;
+   font-style: normal; 
+   font-size: small;
+}
+
+.button-form3 {
+   margin-left: 20px;
+   margin-top: 5px;
+   width: 100px;
+   height: 22px;
+   font-style: normal; 
+   font-size: small;
+}
+
+.button-form4 {
+   margin-left: 20px;
+   margin-top: 5px;
+   width: 100px;
+   height: 25px;
+   font-style: normal; 
+   font-size: small;
+}
+
+.button-form5 {
+   margin-left: 30px;
+   margin-top: 5px;
+   width: 100px;
+   height: 25px;
+   font-style: normal; 
+   font-size: small;
+}
+
+/* css de la zone demo-pays */
+#demo-pays {
+   display: inline-block;
+   vertical-align:top; 
+   width: 100%;
+   height: 30px;  
+}
+
+#demo-live {
+   display: inline-block;
+   vertical-align:top; 
+   width: 100%;
+   height: 365px;  
+}
+
+.label-pays {
+   width: 110px;
+   display: inline-block;
+   font-style: normal; 
+   font-size: small;
+}
+
+.invisible{
+   display: none;
+}
+
+.col1{
+   width: 110px;
+   text-align: right;
+}
+.col3{
+   width: 30px;
+   text-align: left;
+}
+.col2{
+   width:210px;
+}
+.col2-pays{
+   margin-left: -10px;
+}
+.col4{
+   width:260px;
+}
+
+/* css de la zone formulaire adresse */
+
+#ligne_ent {
+   display: inline-block;
+   width: 100%;
+}
+
+table {
+   /*border: medium solid #000000;*/
+   width: 100% ;
+   border:white;
+}
+
+.table_decor {
+   border-top: 1px solid buttonshadow;
+   border-bottom: 1px solid buttonshadow;
+   font-size: small; 
+   font-family: Calibri,Arial,sans-serif;
+   -webkit-box-shadow: 0 0 5px #666666;
+	box-shadow: 0 0 5px #6666666; 
+}
+
+label {
+   font-style: normal; 
+   font-size: small;
+}
+#lib_pays {
+   margin-right: 22px;
+}
+#lib_pays_mono {
+   margin-left: 12px;
+}
+
+/* css générique */
+.dqe-select-xmedium { width: 180px; margin: 5px; margin-left: -2px; font-style: normal; font-size: small;height: 20px;}
+.dqe-input { width: 350px; margin: 5px; margin-left: 15px; font-style: normal; font-size: small;height: 16px;}
+.dqe-input-large { width: 240px; margin: 5px; margin-left: 15px; font-style: normal; font-size: small;height: 16px;}
+.dqe-input-medium { width: 240px; margin: 5px; margin-left: 15px; font-style: normal; font-size: small;height: 16px;}
+.dqe-input-xmedium { width: 180px; margin: 5px; font-style: normal; font-size: small;height: 16px;}
+.dqe-input-xsmedium { width: 136px; margin: 5px; font-style: normal; font-size: small;height: 16px;}
+.dqe-input-small { width: 80px; margin: 5px; margin-left: 15px; font-style: normal; font-size: small;height: 16px;}
+.dqe-input-smaller { width: 45px; margin: 5px; margin-left: 15px; font-style: normal; font-size: small;height: 16px;}
+.dqe-input-xsmall { width: 35px; margin: 5px; margin-left: 15px; font-style: normal; font-size: small;height: 16px;}
+/*.ui-autocomplete {height: 140px; width:40px; overflow-y: scroll; overflow-x: no-display; font-style: normal; font-size: small;  background:#fdfcbd;}*/
+.ui-autocomplete {height: 140px; width:40px; overflow-y: scroll; overflow-x: no-display; font-style: normal; font-size: small;}
+.dqe-info-ko {color: #A94442; text-align: left;background-position: center;font-size:15px}
+.dqe-info-ook {color: orange; text-align: left; background-position: center;font-size:15px}
+.dqe-coche {background: url('accept.png') right center no-repeat;}
+.dqe-error {background: url('email_error.png') right center no-repeat;}
+.dqe-error-tel {background: url('telephone_error.png') right center no-repeat;}
+
+.dqe-info-ok {color: green; text-align: left; background-position: center;font-size:15px}
+.dqe-info {color: #A94442; text-align: left; background-position: center; background-color:gainsboro; font-style: normal; font-size:15px}
+.center_block {margin-left: 10px; width: 100px; height: 22px; font-style: normal;font-size: small;}
+.dqe-anime {background: url('ui-anim_basic_16x16.gif') right center no-repeat;}
+.label-radio {font-style: normal; font-size: small;width: 140px; display: inline-block;}
+.radiochoix {font-style: normal; font-size: small; }
+.label-tous {font-size: small; font-family: Calibri,Arial,sans-serif;}
+.dqe-info-verif {color: black; text-align: left; background-position: center; font-style: small; font-size: normal; font-weight: bold; background: url('email_error.png') left center no-repeat;}
+.dqe-info-verif2 {text-align: left; color:graytext ;background-position: center; font-style: normal; font-size: medium; font-variant: small-caps;}
+.dqe-info-verif3 {text-align: left; background-position: center; font-style: normal; font-size: normal; }
+
+::-webkit-input-placeholder {
+    font-style: italic; font-size: smaller;
+}
+:-moz-placeholder {
+    font-style: italic; font-size: smaller;
+}
